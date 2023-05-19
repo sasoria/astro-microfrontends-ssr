@@ -4,8 +4,8 @@ This demo takes advantage of EcmaScript Modules (ESM) and url-imports to do serv
 
 ## Features
 
-- ✨ Server-side composition of microfrontends
-- 🎉 Server-side rendring of micro-frontends
+- Server-side composition of microfrontends
+- Server-side rendring of micro-frontends
 
 ## Usage
 

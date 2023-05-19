@@ -1,16 +1,25 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import ReactComponent from "../components/ReactComponent";
 
-const data = await fetch("http://localhost:7100/manifest.json");
-const manifest = await data.json();
+const response = await fetch("http://localhost:7100/manifest.json");
+const manifest = await response.json();
 
 const cssEntrypoint = manifest["src/MicroFrontend.css"]["file"];
+const cssUrl = `http://localhost:7100/${cssEntrypoint}`;
 ---
 
-<Layout title="Shell" cssEntrypoint={cssEntrypoint}>
-  <main>
-    <h1>Shell app</h1>
-    <ReactComponent manifest={manifest}>
-  </main>
-</Layout>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href={cssUrl} />
+    <title>Shell app</title>
+  </head>
+  <body>
+    <main>
+      <h1>Shell app</h1>
+      <ReactComponent manifest={manifest}>
+    </main>
+  </body>
+</html>

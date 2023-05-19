@@ -12,6 +12,7 @@ export default ({ command }) => ({
       external: ["react", "react-dom"],
       output: {
         entryFileNames: "bundle.[hash].js",
+        assetFileNames: "bundle.[hash].css",
         format: "esm",
       },
     },

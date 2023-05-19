@@ -5,20 +5,7 @@ import deno from "@astrojs/deno";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    react(),
-    solidJs(),
-    {
-      name: "importmap-externals",
-      hooks: {
-        "astro:build:setup": ({ vite, target }) => {
-          if (target === "client") {
-            vite.build.rollupOptions["external"] = ["react", "react-dom"];
-          }
-        },
-      },
-    },
-  ],
+  integrations: [react()],
   output: "server",
   adapter: deno({
     port: 3000,

@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ReactComponent from "../components/ReactComponent";
+
+const data = await fetch("http://localhost:7100/manifest.json");
+const manifest = await data.json();
+---
+
+<Layout title="Shell">
+  <main>
+    <h1>Shell app</h1>
+    <ReactComponent manifest={manifest}>
+  </main>
+</Layout>

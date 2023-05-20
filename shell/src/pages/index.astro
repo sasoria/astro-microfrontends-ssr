@@ -1,5 +1,5 @@
 ---
-import ReactComponent from "../components/ReactComponent";
+import MicroFrontends from "../components/MicroFrontends";
 
 const response = await fetch("http://localhost:7100/manifest.json");
 const manifest = await response.json();
@@ -19,7 +19,7 @@ const cssUrl = `http://localhost:7100/${cssEntrypoint}`;
   <body>
     <main>
       <h1>Shell app</h1>
-      <ReactComponent manifest={manifest}>
+      <MicroFrontends manifest={manifest}>
     </main>
   </body>
 </html>

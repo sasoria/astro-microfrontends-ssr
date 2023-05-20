@@ -15,7 +15,7 @@ This demo takes advantage of remote EcmaScript Modules (ESM) to server-side rend
 - Build each microfrontend with `npm run build`
 - Start each microfrontend with `node server.js`
 
-### Shell
+### Shell application
 
 - Build the shell with `npm run build`
 - Start the shell with `npm run preview`

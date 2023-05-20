@@ -1,14 +1,13 @@
 import React from "react";
 
 const MicroFrontends = ({ manifest }: any) => {
-  const entrypoint = manifest["src/MicroFrontend.jsx"]["file"];
-  const MicroFrontendA = React.lazy(
-    () => import(`http://localhost:7100/${entrypoint}`)
-  );
+  const MicroFrontendA = React.lazy(() => import(manifest.mfa.url));
+  const MicroFrontendB = React.lazy(() => import(manifest.mfb.url));
 
   return (
     <>
       <MicroFrontendA />
+      <MicroFrontendB />
     </>
   );
 };

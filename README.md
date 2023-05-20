@@ -5,7 +5,7 @@ This demo takes advantage of remote EcmaScript Modules (ESM) to server-side rend
 ## Features
 
 - :astronaut: Server-side rendering of micro-frontends
-- :sparkles: Server-side composition of microfrontends
+- :sparkles: Server-side composition of micro-frontends
 - :package: Cacheable remote modules with Deno
 
 ## Usage

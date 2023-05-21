@@ -1,29 +1,8 @@
 ---
 import MicroFrontends from "../components/MicroFrontends";
-import { asset, css, js } from "../utils/entrypoints";
+import { buildManifest } from "../utils/manifest";
 
-const responseA = await fetch("http://localhost:7100/manifest.json");
-const manifestA = await responseA.json();
-
-const responseB = await fetch("http://localhost:7200/manifest.json");
-const manifestB = await responseB.json();
-
-const jsEntryPointA = manifestA[js][asset];
-const jsEntryPointB = manifestB[js][asset];
-
-const cssEntryPointA = manifestA[css][asset];
-const cssEntryPointB = manifestB[css][asset];
-
-const manifest = {
-  mfa: {
-    url: `http://localhost:7100/${jsEntryPointA}`,
-    css: `http://localhost:7100/${cssEntryPointA}`
-  },
-  mfb: {
-    url: `http://localhost:7200/${jsEntryPointB}`,
-    css: `http://localhost:7200/${cssEntryPointB}`
-  }
-};
+const manifest = await buildManifest();
 ---
 
 <!DOCTYPE html>

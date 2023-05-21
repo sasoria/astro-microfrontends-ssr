@@ -1,6 +1,6 @@
 # astro-microfrontends
 
-This demo takes advantage of remote EcmaScript Modules (ESM) to server-side render micro-frontends. Express is used for serving assets, but ideally one would have a dedicated CDN hosting them.
+This demo takes advantage of EcmaScript Modules (ESM) to server-side render micro-frontends. Express is used for serving assets, but ideally one would have a dedicated CDN hosting them.
 
 ## Features
 
